@@ -1,0 +1,9 @@
+<?php
+    $hote='';
+    $port='';
+    $nom_bd='';
+    $identifiant='';
+    $mot_de_passe='';
+    $encodage='utf8';
+    $debug=true;
+?>
