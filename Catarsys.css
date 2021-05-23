@@ -1,4 +1,8 @@
-
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,,800,900);
+html{
+  width:100%;
+  height: 100%;
+}
 
             /* CONSTANTES */
 
@@ -11,7 +15,7 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style-type:none;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto';
   font-weight: 20px;
   scroll-behavior: smooth;
 }
@@ -46,6 +50,7 @@ body{
   --box-shadow-buttons:  rgba(5, 59, 70, 0.5);
 }
 
+/*
 .Background {
   position:absolute;
   top:0px;
@@ -54,10 +59,10 @@ body{
   background-size:cover;
   width:100%;
   height:100vh;
-  /*filter:blur(8px);*/
+  filter:blur(8px);
   z-index: -1;
 }
-
+*/
                 /* ANCRES!!!!!!*/
 .Ancre{
 color:var(--main-color);
@@ -146,6 +151,7 @@ header {
   position:relative;
   z-index: 5;
   margin-bottom: 100px;
+  font-family: 'Raleway', sans-serif;
 }
 
             /* NAVIGATION*/
@@ -153,44 +159,23 @@ header nav {
   width : 100%;
   height : 60px;
   display: flex;
-  justify-content: space-between;
+  justify-content:flex-end;
   flex-direction: row;
   padding : 0px 50px;
   margin:30px 0px 0px;
-  background-color: rgba(5, 59, 70, 0.5);
-  position: fixed;
-  z-index: 30000;
+  position: absolute;
 }
 
-header nav .Logo {
-height:100%;
-width:80px;
-background-color: red;
-order:1;
-}
-
-header nav .logo img{
-width:100%;
-height: 100%;
-object-fit: contain;
-object-position: center;
-}
-
-header nav .navigation {
-height:100%;
-order:2;
-}
-
-header nav .navigation ul {
+header nav ul {
 display:flex;
 height:100%;
 align-items: center;
 }
 
-header nav .navigation ul li {
+header nav ul li {
 }
 
-header nav .navigation ul li a {
+header nav ul li a {
 padding:0px 20px;
 margin:0px 20px;
 color:white;
@@ -199,42 +184,65 @@ font-size: 15px;
 transition: 0.25s ease;
 }
 
-header nav .navigation ul li a:hover{
-text-decoration: underline;
+header nav ul li a:hover{
+color : rgb(5, 59, 70);
 font-size : 16px;
+font-weight: bold;
 }
 
+header .nav_icons {
+  position : absolute;
+  height: 100%;
+  left : 20px;
+  display: flex;
+  align-items: center;
+  position: fixed;
 
-
-              /*BLOCK11*/
-.Block11 {
-position : absolute;
-width: 30%;
-top:50%;
-left:80%;
-transform:translate(-50%, -50%);
-z-index:10;
 }
 
-.Block11 .TitreBlock1 {
-text-align: center;
-color: white;
+header .nav_icons ul {
+  display: flex;
+  flex-direction: column;
 }
 
-.Block11 .TitreBlock1 p{
-  font-size: 30px;
+header .nav_icons li {
+  margin: 10px 0;
 }
 
-.Block11 .Joliespetitesancres{
-display: flex;
-flex-direction: row;
-margin-top: 30px;
-justify-content: center;
-white-space: nowrap;
+header .nav_icons ul li a {
+  color : white;
+  font-size: 22px;
 }
 
-.Block11 .Joliespetitesancres .Ancre{
-margin:0px 40px;
+header .nav_icons ul li a:hover {
+  color: var(--main-color);
+  font-weight: bold;
+
+}
+
+.background {
+  background-color: rgb(235, 236, 232);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.background .titre_header{
+font-weight: 800;
+font-size: 120px;
+background-image: url(images/bg.jpg);
+-webkit-background-clip: text;
+background-position: 40% 60%;
+color: transparent;
+line-height:90px;
+letter-spacing: -8px;
+}
+
+.background .soustitre_header {
+ padding-top:10px;
 }
 
                                                     /*SECTION1*/
