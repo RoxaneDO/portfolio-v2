@@ -8,8 +8,7 @@ html{
 
 /* GENERAL*/
 *{
-    <<<<<<< HEAD
-    margin:0;
+        margin:0;
     padding:0;
     box-sizing: border-box;
     text-decoration: none;
@@ -17,17 +16,7 @@ html{
     font-family: 'Roboto', sans-serif;
     font-weight: 20px;
     scroll-behavior: smooth;
-    =======
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style-type:none;
-    font-family: 'Roboto';
-    font-weight: 20px;
-    scroll-behavior: smooth;
-    >>>>>>> 608bf027456a728312f1704d7cff096b829a35a8
-}
+    }
 
 h1{
     font-size: 70px;
@@ -61,20 +50,6 @@ body{
 
 /*
 .Background {
-<<<<<<< HEAD
-position:absolute;
-top:0px;
-left:0px;
-background-image:url("images/background.jpg");
-background-size:cover;
-width:100%;
-height:100vh;
-/*filter:blur(8px);*/
-z-index: -1;
-}
-
-/* ANCRES!!!!!!*/
-=======
 position:absolute;
 top:0px;
 left:0px;
@@ -87,7 +62,6 @@ z-index: -1;
 }
 */
 /* ANCRES!!!!!!*/
->>>>>>> 608bf027456a728312f1704d7cff096b829a35a8
 .Ancre{
     color:var(--main-color);
     padding: 0px 20px;
