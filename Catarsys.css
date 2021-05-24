@@ -37,7 +37,8 @@ body{
 }
 
 :root {
-    --main-color:rgb(5, 59, 70);
+    /*--main-color:rgb(5, 59, 70);*/
+    --main-color:rgb(235, 236, 232);
     --line-height:30px;
     --font-size:25px;
 
@@ -179,7 +180,11 @@ header nav ul li a {
     color:white;
     flex-direction: row;
     font-size: 15px;
+    font-weight: bold;
     transition: 0.25s ease;
+    color: rgb(150, 155, 134);
+    text-transform: uppercase;
+
 }
 
 header nav ul li a:hover{
@@ -241,6 +246,9 @@ header .nav_icons ul li a:hover {
 
 .background .soustitre_header {
     padding-top:10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(198, 74, 13);
 }
 
 /*SECTION1*/
