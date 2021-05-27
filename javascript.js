@@ -49,9 +49,15 @@ let photo = $(".Photo");
 let vh = $(window).height();
 
 $(window).scroll(function() {
-    if ($(this).scrollTop()>0.5*vh){
+    if ($(this).scrollY()>0.5*vh){
+        let visible = true;
+        photo.addClass("visible");
         photo.css("--maVarTop", "30px");
         photo.css("--maVarLeft", "-30px");
+    }
+    else ($(this).scrollY()>0.5*vh){
+      let visible = false;
+      photo.removeClass("visible");
     }
 });
 

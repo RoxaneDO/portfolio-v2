@@ -280,17 +280,20 @@ section .Block2 .Photo {
     --maVarLeft= defaultValue;
 }
 
-section .Block2 .backgroundPhoto{
+section .Block2 .Photo::before{
     width: 100%;
     height: 100%;
-    background: linear-gradient(90, rgb(198, 74, 13), rgb(68, 169, 168));
-    position: absolute;
-    /* border-radius: 50% 20% / 10% 40%; */
+    background-color: red;
     content: "";
+    position: absolute;
     top:var(--maVarTop);
     left:var(--maVarLeft);
     z-index: -1;
 
+}
+
+section .Block2 .Photo::before.visible {
+  transition: 4s;
 }
 
 section .Block2 .Photo img {
