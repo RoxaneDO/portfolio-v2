@@ -8,13 +8,14 @@ html{
 
 /* GENERAL*/
 *{
-        margin:0;
+    margin:0;
     padding:0;
     box-sizing: border-box;
     text-decoration: none;
     list-style-type:none;
     font-family: 'Roboto', sans-serif;
-    font-weight: 20px;
+    line-height: 35px;
+    font-size: 20px;
     scroll-behavior: smooth;
     }
 
@@ -24,11 +25,14 @@ h1{
 }
 
 h2{
-    font-size: 30px;
-    font-weight: normal;
-    margin-bottom: 30px;
-    margin-top: 30px;
-    color: var(--main-color);
+    font-weight: 800;
+    font-size: 90px;
+    color: rgb(86,182,187,0.2) ;
+    /*color: rgb(198,74,13,0.8) ;*/
+    line-height:90px;
+    letter-spacing: -8px;
+    padding-left: 50px;
+    margin-bottom:
 }
 
 body{
@@ -38,10 +42,9 @@ body{
 
 :root {
     /*--main-color:rgb(5, 59, 70);*/
-    --main-color:rgb(150, 155, 134);
+    --main-color: rgb(198,74,13);
     --line-height:30px;
     --font-size:25px;
-
     --margin-paragraphes:20px 0px;
     --margin-UdSection:40px 0px;
     --size-FakeH2: 30px;
@@ -78,7 +81,7 @@ z-index: -1;
 .Ancre:before{
     position: absolute;
     content: "";
-    border-radius: 20px 20px 0 0 ;
+    border-radius: 0px 0px 0 0 ;
     border-top: 2px var(--main-color) solid;
     border-right: 2px var(--main-color) solid;
     border-left:2px var(--main-color) solid;
@@ -94,7 +97,7 @@ z-index: -1;
 .Ancre::after{
     position:absolute;
     content: "";
-    border-radius: 0px 0px 20px 20px;
+    border-radius: 0px 0px 0px 0px;
     border-bottom : 2px var(--main-color) solid;
     border-right: 2px var(--main-color) solid;
     border-left:2px var(--main-color) solid;
@@ -172,6 +175,7 @@ header nav ul {
 }
 
 header nav ul li {
+
 }
 
 header nav ul li a {
@@ -272,6 +276,7 @@ section .Block2{
     margin: var(--margin-UdSection);
 }
 
+
 section .Block2 .Photo {
     width: 30%;
     height: 30%;
@@ -280,26 +285,35 @@ section .Block2 .Photo {
     --maVarLeft= defaultValue;
 }
 
-section .Block2 .Photo::before{
+/*
+section .Block2 .Photo:before{
     width: 100%;
     height: 100%;
     background-color: red;
     content: "";
     position: absolute;
-    top:var(--maVarTop);
+    top:var(--maVarLeft);
     left:var(--maVarLeft);
     z-index: -1;
+}*/
 
+section .Block2 .Photo .backgroundPhoto {
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    content:"";
+    background: linear-gradient(0.25turn, rgba(198,74,13), #FFFFFF, #FFFFFF);
+    transition:0.5s;
+    z-index:-1;
 }
 
-section .Block2 .Photo::before.visible {
-  transition: 4s;
-}
+
 
 section .Block2 .Photo img {
     width: 100%;
     height: 100%;
-
     object-fit: contain;
     justify-content: center;
     /* border-radius: 50% 20% / 10% 40%; */
@@ -313,33 +327,21 @@ section .Block2 .Block21 {
 }
 
 section .Block2 .Block21 h2 {
-    position: relative;
-}
-
-section .Block2 .Block21 h2::before {
-    position: absolute;
-    content: "";
-    width: 80px;
-    bottom: -5px;
-    height: 0px;
-    border-top: 4px var(--main-color) solid;
-    transition: 0.25s ease;
-
-}
-
-section .Block2 .Block21 h2:hover:before {
-    width: 160px;
-    height:40px;
-    background-color: rgb(198, 74, 13);
-    transition: 0.25s ease;
-    border-top:  rgb(198, 74, 13);
-    z-index: -5;
-    color : white;
-
+    text-align: left;
 }
 
 section .Block2 .Block21 p {
     margin: var(--margin-paragraphes);
+}
+
+section .Block2 .Block21 p span {
+    font-weight: bolder;
+    color : rgb(198,74,13,0.6);
+}
+
+section .Block2 .Block21 p .HBLien {
+    color : rgb(198,74,13,0.6);
+    font-weight: bold;
 }
 
 section .Block2 .Block21 .CV {
@@ -360,10 +362,6 @@ section .Block2 .Block21 .ancre_container {
 
 }
 
-section .Block2 .Block21 .ancre_container:hover{
-
-
-}
 
 /* BLOCK3*/
 section .Block3 {
@@ -375,27 +373,8 @@ section .Block3 {
 }
 
 
-section .Block3 .Block31 .Barre_Horizontale {
-    width:80px;
-    height: 0px;
-    border: 2px var(--main-color) solid;
-    background-color: grey;
-    position:relative;
-    top:-30px;
-}
-
-
 section .Block3 .intro_skills h2 {
-    position: relative;
-}
 
-section .Block3 .intro_skills h2::before{
-    position: absolute;
-    content: "";
-    width: 80px;
-    bottom: -5px;
-    height: 0px;
-    border-top: 4px var(--main-color) solid;
 }
 
 
@@ -432,16 +411,10 @@ section .Block3 .intro_skills p{
 
 .Block3 .skills .skill .skill_content ul {
     position: relative;
+    border-left: 1px black solid;
+    padding-left: 8px;
 }
 
-.Block3 .skills .skill .skill_content ul ::before {
-    position: absolute;
-    content: "";
-    left:-10px;
-    width: 0px;
-    height:50%;
-    border-left: 1px black solid;
-}
 
 .Block3 .skills .skill .skill_content i {
     position: absolute;
@@ -460,16 +433,18 @@ section .Block4 {
     flex-direction: column;
     position:relative;
     width: 100%;
-    height: 100%;
-    background-color: yellow;
+    height: 400px;
     z-index: 0;
     padding: 50px 0px;
 }
 
 section .Block4::before {
-    width: 125%;
+    width: 150%;
     height: 100%;
-    background-color: var(--main-color);
+    background-image: url(images/bg.jpg);
+    filter: blur(2px);
+    background-position: center;
+    background-size: cover;
     position:absolute;
     top: 0px;
     content: "";
@@ -526,14 +501,6 @@ section .Block4::before {
     position: relative;
 }
 
-.Block5 .Block51 h2::before{
-    position: absolute;
-    content: "";
-    width: 80px;
-    bottom: -5px;
-    height: 0px;
-    border-top: 4px var(--main-color) solid;
-}
 
 .Block5 .Block51 p {
     line-height: var(--line-height);
@@ -588,9 +555,9 @@ footer .Block61 {
 footer .Block62 {
     width: 100%;
     height:100%;
-    color: white;
+    color: rgb(150, 155, 134);
     position: relative;
-    background-color: var(--main-color);
+    background-color: rgb(235, 236, 232) ;
 }
 
 footer .Block62 .Container {

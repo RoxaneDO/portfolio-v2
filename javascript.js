@@ -43,22 +43,39 @@ card.style.transform = `rotateY(0deg) rotateX(0deg)`;
 
 
 // ANIMATION OMBRE PHOTO
-
+let containerPresentation = $(".Block2");
 let photo = $(".Photo");
-
+let backgroundPhoto = $(".backgroundPhoto");
 let vh = $(window).height();
 
+
+containerPresentation.on("mouseover", function(){
+    backgroundPhoto.css("top", "30px");
+    backgroundPhoto.css("left", "-30px");
+    backgroundPhoto.css("height", "100%");
+    backgroundPhoto.css("transition", "0.5s");
+});
+
+containerPresentation.on("mouseleave", function(){
+    backgroundPhoto.css("top", "0px");
+    backgroundPhoto.css("height", "98%");
+    backgroundPhoto.css("left", "0px");
+    backgroundPhoto.css("transition", "0.5s");
+
+});
+
+/*
 $(window).scroll(function() {
-    if ($(this).scrollY()>0.5*vh){
+    if ($(this).scrollY>0.5*vh){
         let visible = true;
         photo.addClass("visible");
         photo.css("--maVarTop", "30px");
         photo.css("--maVarLeft", "-30px");
     }
-    else ($(this).scrollY()>0.5*vh){
+    else if ($(this).scrollY>0.5*vh){
       let visible = false;
       photo.removeClass("visible");
     }
 });
-
+*/
 });
