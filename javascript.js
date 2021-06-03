@@ -1,3 +1,14 @@
+// MES POINTEURS
+let vh = $(window).height();
+let pageComplete=$(document).height();
+let containerPresentation = $(".Block2");
+let photo = $(".Photo");
+let backgroundPhoto = $(".backgroundPhoto");
+let bandeauContainer = $("#bandeauContainer");
+let imageBandeau = $("#imageBandeau");
+let navIcone = $(".nav_icons");
+let distanceIcon= vh-225;
+
 // ANIMATION HEADER
 $(document).ready(function(){
     var mouseX, mouseY;
@@ -14,41 +25,7 @@ $(document).ready(function(){
     }
 );
 
-
-/*
-// ANIMATION CARD
-//Movement Animation to happen
-const card = document.querySelector(".card");
-const containerPhoto = document.querySelector(".containerPhoto");
-
-//Moving Animation Event
-containerPhoto.addEventListener("mousemove", (e) => {
-let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-});
-
-//Animate In
-containerPhoto.addEventListener("mouseenter", (e) => {
-card.style.transition = "none";
-card.style.transform = `rotateY(0deg) rotateX(0deg)`;
-});
-
-//Animate Out
-containerPhoto.addEventListener("mouseleave", (e) => {
-card.style.transition = "all 1s ease";
-card.style.transform = `rotateY(0deg) rotateX(0deg)`;
-});
-*/
-
-
 // ANIMATION OMBRE PHOTO
-let containerPresentation = $(".Block2");
-let photo = $(".Photo");
-let backgroundPhoto = $(".backgroundPhoto");
-let vh = $(window).height();
-
-
 containerPresentation.on("mouseover", function(){
     backgroundPhoto.css("top", "30px");
     backgroundPhoto.css("left", "-30px");
@@ -61,21 +38,48 @@ containerPresentation.on("mouseleave", function(){
     backgroundPhoto.css("height", "98%");
     backgroundPhoto.css("left", "0px");
     backgroundPhoto.css("transition", "0.5s");
-
 });
+
+// ANIMATION BANDEAU
+bandeauContainer.on("mouseover", function(){
+    imageBandeau.css("transform", "scale(1.3)");
+    imageBandeau.css("transition", "8s ease");
+});
+
+bandeauContainer.on("mouseleave", function(){
+    imageBandeau.css("transform", "scale(1)");
+    imageBandeau.css("transition", "10s ease-in-out");
+});
+
+
+$(window).scroll(function(){
+    console.log($(document).scrollTop());
+    if ($(document).scrollTop() == (pageComplete-vh)){
+        navIcone.css("height", "450px");
+        navIcone.css("bottom", "0");
+        navIcone.css("transition", "0.7s ease-in-out");
+    };
+    if ($(document).scrollTop() < (pageComplete-vh)){
+        navIcone.css("height", "100vh");
+        navIcone.css("transition", "0.7s ease-in-out");
+    };
+
+
+})
+
 
 /*
 $(window).scroll(function() {
-    if ($(this).scrollY>0.5*vh){
-        let visible = true;
-        photo.addClass("visible");
-        photo.css("--maVarTop", "30px");
-        photo.css("--maVarLeft", "-30px");
-    }
-    else if ($(this).scrollY>0.5*vh){
-      let visible = false;
-      photo.removeClass("visible");
-    }
+if ($(this).scrollY>0.5*vh){
+let visible = true;
+photo.addClass("visible");
+photo.css("--maVarTop", "30px");
+photo.css("--maVarLeft", "-30px");
+}
+else if ($(this).scrollY>0.5*vh){
+let visible = false;
+photo.removeClass("visible");
+}
 });
 */
 });
