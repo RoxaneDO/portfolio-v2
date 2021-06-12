@@ -44,6 +44,9 @@ containerPresentation.on("mouseleave", function(){
 bandeauContainer.on("mouseover", function(){
     imageBandeau.css("transform", "scale(1.3)");
     imageBandeau.css("transition", "8s ease");
+
+    bandeauContainer.css("transition", "6s");
+
 });
 
 bandeauContainer.on("mouseleave", function(){
@@ -54,7 +57,7 @@ bandeauContainer.on("mouseleave", function(){
 
 $(window).scroll(function(){
     console.log($(document).scrollTop());
-    if ($(document).scrollTop() == (pageComplete-vh)){
+    if ($(document).scrollTop() >= (pageComplete-vh-50)){
         navIcone.css("height", "450px");
         navIcone.css("bottom", "0");
         navIcone.css("transition", "0.7s ease-in-out");
@@ -63,11 +66,19 @@ $(window).scroll(function(){
         navIcone.css("height", "100vh");
         navIcone.css("transition", "0.7s ease-in-out");
     };
-
-
 })
 
-
+$(window).resize(function(){
+    vh = $(window).height();
+    pageComplete=$(document).height();
+    containerPresentation = $(".Block2");
+    photo = $(".Photo");
+    backgroundPhoto = $(".backgroundPhoto");
+    bandeauContainer = $("#bandeauContainer");
+    imageBandeau = $("#imageBandeau");
+    navIcone = $(".nav_icons");
+    distanceIcon= vh-225;
+});
 /*
 $(window).scroll(function() {
 if ($(this).scrollY>0.5*vh){

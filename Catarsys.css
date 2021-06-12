@@ -427,10 +427,15 @@ section .Block3 .intro_skills p{
 }
 
 /* BANDEAU BLOCK4*/
+
 .containerFluid {
-    height: 20rem;
+    /*height: 20rem;*/
     display: block;
     position:relative;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    height:700px;
 }
 
 
@@ -441,7 +446,8 @@ section .Block3 .intro_skills p{
     top: 0;
     left: 0;
     overflow: hidden;
-    z-index: -1;
+    z-index: 0;
+
 }
 
 .containerFluid .containerImage img{
@@ -450,6 +456,7 @@ section .Block3 .intro_skills p{
     object-fit: cover;
     transform: scale(1);
     transition: 10s ease-in-out;
+    box-shadow: inset 0.7rem 0.7rem 4rem black;
 }
 
 .containerFluid .contentBandeau {
@@ -459,7 +466,7 @@ section .Block3 .intro_skills p{
     align-items: center;
     flex-direction: column;
     height: 100%;
-
+    z-index: 10;
 }
 
     /* SECTION 2 BLOCK 5*/
