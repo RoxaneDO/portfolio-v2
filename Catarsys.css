@@ -15,7 +15,7 @@ html{
     list-style-type:none;
     font-family: 'Roboto', sans-serif;
     line-height: 35px;
-    font-size: 16px;
+    font-size: 14px;
     scroll-behavior: smooth;
 }
 
@@ -153,7 +153,6 @@ z-index: -1;
 body .nav_icons {
    height: 100vh;
    left : 20px;
-
    display: flex;
    align-items: center;
    position: fixed;
@@ -165,19 +164,37 @@ body .nav_icons ul {
    flex-direction: column;
 }
 
+body .nav_icons ul li a {
+    display : flex;
+    align-items: center;
+    color:black;
+}
+
 body .nav_icons li {
-   margin: 10px 0;
+   margin: 8px 0;
+}
+
+body .nav_icons ul li img {
+    weight: 40px;
+    height: 40px;
+    margin-left:70px;
+    margin-right: 60px;
+    transform:rotate(270deg);
 }
 
 body .nav_icons ul li i {
-   font-size: 22px;
+   font-size: 20px;
    color : rgb(150, 155, 134);
 }
 
-body .nav_icons ul li .icons_hover:hover {
-   color:  rgb(198, 74, 13);
-   font-weight: bold;
+body .nav_icons ul li a span {
+    display: flex;
+    align-items: center;
+}
 
+body .nav_icons ul li .icons_hover:hover {
+  /* color : rgb(198, 74, 13);*/
+   font-weight: bold;
 }
 
 /* HEADER (BLOCK1)*/
@@ -186,7 +203,6 @@ header {
     height:100vh;
     position:relative;
     z-index: 5;
-    margin-bottom: 100px;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -209,7 +225,6 @@ header nav ul {
 }
 
 header nav ul li {
-
 }
 
 header nav ul li a {
@@ -217,7 +232,6 @@ header nav ul li a {
     margin:0px 20px;
     color:white;
     flex-direction: row;
-    font-size: 15px;
     font-weight: bold;
     transition: 0.25s ease;
     color : rgb(68, 169, 168);
@@ -225,7 +239,6 @@ header nav ul li a {
 }
 
 header nav ul li a:hover{
-    /*color : rgb(5, 59, 70);*/
     font-size : 16px;
     font-weight: bold;
 }
@@ -263,7 +276,7 @@ header nav ul li a:hover{
 
 .container {
     margin: 50px auto;
-    width: 80%;
+    width: clamp(900px, 1200px, 1350px);
     height: auto;
     display:flex;
     justify-content: center;
@@ -282,11 +295,11 @@ section .Block2{
 
 
 section .Block2 .Photo {
-    width: 30%;
+    width: 35%;
     height: 30%;
     position: relative;
-    --maVarTop= defaultValue;
-    --maVarLeft= defaultValue;
+    --maVarTop = defaultValue;
+    --maVarLeft = defaultValue;
 }
 
 /*
@@ -322,7 +335,7 @@ section .Block2 .Photo img {
 }
 
 section .Block2 .Block21 {
-    width : 60%;
+    width : 50%;
     height: 60%;
     display: flex;
     flex-direction:column;
@@ -427,7 +440,7 @@ section .Block3 .intro_skills p{
 
 /* BANDEAU BLOCK4*/
 
-.containerFluid {
+.containerFluid2 {
     /*height: 20rem;*/
     display: block;
     position:relative;
@@ -437,36 +450,57 @@ section .Block3 .intro_skills p{
     height:700px;
 }
 
-
-.containerFluid .containerImage{
+.containerFluid2 .containerImage{
     height: 100%;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
     overflow: hidden;
-    z-index: 0;
+    z-index: -10;
 
 }
 
-.containerFluid .containerImage img{
+.containerFluid2 .containerImage img{
     height: 100%;
     width: 100%;
     object-fit: cover;
-    border-radius: 50%;
-    transform: scale(1);
     transition: 10s ease-in-out;
-    box-shadow: inset 0.7rem 0.7rem 4rem black;
 }
 
-.containerFluid .contentBandeau {
-    color:white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.containerFluid2 .contentBandeau {
     height: 100%;
-    z-index: 10;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerFluid2 .contentBandeau div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containerFluid2 .contentBandeau div .titreBandeau{
+    font-weight: 800;
+    font-size: 120px;
+    line-height:90px;
+    color:rgb(235,236,232);
+    letter-spacing: -8px;
+}
+
+.containerFluid2 .contentBandeau div p {
+    color:rgb(235,236,232);
+    padding-top:10px;
+    font-size: 16px;
+    font-weight: bold;
+
+}
+
+.containerFluid2 .contentBandeau .ancre_container{
+    line-height: 16px;
 }
 
     /* SECTION 2 BLOCK 5*/

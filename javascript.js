@@ -7,6 +7,7 @@ let backgroundPhoto = $(".backgroundPhoto");
 let bandeauContainer = $("#bandeauContainer");
 let imageBandeau = $("#imageBandeau");
 let navIcone = $(".nav_icons");
+let navIconeInfo = $(".nav_icons span");
 let distanceIcon= vh-225;
 
 // ANIMATION HEADER
@@ -44,7 +45,6 @@ containerPresentation.on("mouseleave", function(){
 bandeauContainer.on("mouseover", function(){
     imageBandeau.css("transform", "scale(1.3)");
     imageBandeau.css("transition", "8s ease");
-
     bandeauContainer.css("transition", "6s");
 
 });
@@ -61,8 +61,10 @@ $(window).scroll(function(){
         navIcone.css("height", "450px");
         navIcone.css("bottom", "0");
         navIcone.css("transition", "0.7s ease-in-out");
+        navIconeInfo.removeClass("hidden");
     };
     if ($(document).scrollTop() < (pageComplete-vh)){
+        navIconeInfo.addClass("hidden");
         navIcone.css("height", "100vh");
         navIcone.css("transition", "0.7s ease-in-out");
     };
